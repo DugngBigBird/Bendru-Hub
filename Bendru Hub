@@ -9,7 +9,7 @@ local Window = BendruHub:MakeWindow({Name = "Bendru Hub", HidePremium = false, S
 BendruHub:MakeNotification({
 	Name = "Bendru Hub",
 	Content = "Welcome To Bendru Hub",
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://15633299171",
 	Time = 5
 })
 
