@@ -7,7 +7,7 @@ local Window = BendruHub:MakeWindow({Name = "Bendru Hub", HidePremium = false, S
 BendruHub:MakeNotification({
 	Name = "Bendru Hub",
 	Content = "Welcome To Bendru Hub",
-	Image = "rbxassetid://15633299171",
+	Image = "rbxassetid://4483345998",
 	Time = 5
 })
 
@@ -251,49 +251,49 @@ end
 --Tabs
 local WelcomeTab = Window:MakeTab({
  Name = "Welcome",
- Icon = "rbxassetid://15633299171",
+ Icon = "rbxassetid://4483345998",
  PremiumOnly = false
 })
 
 local GeneralTab = Window:MakeTab({
     Name = "AutoFarm",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
     local KitsuneEventTab = Window:MakeTab({
     Name = "Kitsune Event",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
    local ItemQuestTab = Window:MakeTab({
     Name = "Item & Quest",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
    local StatsTab = Window:MakeTab({
     Name = "Stats",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
    local ESPTab = Window:MakeTab({
     Name = "ESP",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
    local RaidTab = Window:MakeTab({
     Name = "Raid",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
    local MicsTab = Window:MakeTab({
     Name = "Setting",
-    Icon = "rbxassetid://15633299171",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
    })
 
