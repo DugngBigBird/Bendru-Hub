@@ -3,7 +3,6 @@ local BendruHub = loadstring(game:HttpGet(('https://raw.githubusercontent.com/sh
 
 local Window = BendruHub:MakeWindow({Name = "Bendru Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Bendru Hub"})
 
-elseif
 
 --Notification
 
