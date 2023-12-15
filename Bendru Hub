@@ -82,10 +82,6 @@ local MicsTab = Window:MakeTab({
     PremiumOnly = false
 })
 
---Lalbel
-
-KitsuneEventTab:AddLabel("Coming Soon!!")
-
 --Notify Toogles
 
 local Section = GeneralTab:AddSection({
