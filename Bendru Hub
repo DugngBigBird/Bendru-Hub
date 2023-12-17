@@ -43,15 +43,6 @@ function BringFruit()
 		end)
 	end)
 end
-
-function AutoCollectAzureEmber()
-		for _,v in next, workspace.EmberTemplate:GetDescendants () do
-			if v.Name == "Part" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-		v.CFrame
-			end
-		end
-end
 --Tabs
 local WelcomeTab = Window:MakeTab({
  Name = "Welcome",
@@ -174,7 +165,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
 end
 
 ShopTab:AddButton({
-	Name = "                       Black Leg ($150,000)",
+	Name = "Black Leg ($150,000)",
 	Callback = function()
 		BlackLeg()
   	end    
@@ -186,7 +177,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
 end
 
 ShopTab:AddButton({
-	Name = "                       Electro ($500,000)",
+	Name = "Electro ($500,000)",
 	Callback = function()
 		Electro()
   	end    
@@ -198,7 +189,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKara
 end
 
 ShopTab:AddButton({
-	Name = "                       Fishman Karate ($750,000)",
+	Name = "Fishman Karate ($750,000)",
 	Callback = function()
 		FishmanKarate()
   	end    
@@ -210,7 +201,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardRewa
 end
 
 ShopTab:AddButton({
-	Name = "                       Dragon Claw (ƒ1,500)",
+	Name = "Dragon Claw (ƒ1,500)",
 	Callback = function()
 		DragonClaw()
   	end    
@@ -222,7 +213,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman"
 end
 
 ShopTab:AddButton({
-	Name = "                       Superhuman ($3,000,000)",
+	Name = "Superhuman ($3,000,000)",
 	Callback = function()
 		Superhuman()
   	end    
@@ -234,7 +225,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
 end
 
 ShopTab:AddButton({
-	Name = "                       Death Step ($2,500,000 & ƒ5,000)",
+	Name = "Death Step ($2,500,000 & ƒ5,000)",
 	Callback = function()
 		DeathStep()
   	end    
@@ -246,7 +237,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKar
 end
 
 ShopTab:AddButton({
-	Name = "                       Sharkman Karate($2,500,000 & ƒ5,000)",
+	Name = "Sharkman Karate($2,500,000 & ƒ5,000)",
 	Callback = function()
 		SharkmanKarate()
   	end    
@@ -258,7 +249,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricCla
 end
 
 ShopTab:AddButton({
-	Name = "                       Electric Claw ($3,000,000 & ƒ5,000)",
+	Name = "Electric Claw ($3,000,000 & ƒ5,000)",
 	Callback = function()
 		ElectricClaw()
   	end    
@@ -270,7 +261,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon
 end
 
 ShopTab:AddButton({
-	Name = "                       Dragon Talon ($3,000,000 & ƒ5,000)",
+	Name = "Dragon Talon ($3,000,000 & ƒ5,000)",
 	Callback = function()
 		DragonTalon()
   	end    
@@ -282,7 +273,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
 end
 
 ShopTab:AddButton({
-	Name = "                       Godhuman ($5,000,000 & ƒ5,000)",
+	Name = "Godhuman ($5,000,000 & ƒ5,000)",
 	Callback = function()
 		Godhuman()
   	end    
@@ -294,11 +285,22 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
 end
 
 ShopTab:AddButton({
-	Name = "                       Sanguine Art ($5,000,000 & ƒ5,000)",
+	Name = "Sanguine Art ($5,000,000 & ƒ5,000)",
 	Callback = function()
 		SanguineArt()
   	end    
 })
+
+--Cách
+local Section = ShopTab:AddSection({
+    Name = " "
+   })
+--Hết!
+
+--Sword
+local Section = ShopTab:AddSection({
+    Name = "Sword"
+   })
 
 --Dropdown
 
@@ -324,7 +326,7 @@ KitsuneEventTab:AddToggle({
 	Name = "Auto Collect Azure Ember",
 	Default = false,
 	Callback = function(Value)
-		AutoAzureEmber(Value)
+		print(Value)
 	end    
 })
 
