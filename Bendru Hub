@@ -327,6 +327,8 @@ KitsuneEventTab:AddToggle({
 	Name = "Auto Collect Azure Ember",
 	Default = false,
 	Callback = function(Value)
+		AutoCollectAzureEmber(Value)
+	end    
 })
 
 BendruHub:Init()
