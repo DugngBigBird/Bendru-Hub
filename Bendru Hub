@@ -128,6 +128,7 @@ local Section = MicsTab:AddSection({
     Name = "Melee Shop"
    })
 
+
 --Button
 
 MicsTab:AddButton({
@@ -322,12 +323,10 @@ local Section = KitsuneEventTab:AddSection({
     Name = "Kitsune Event"
    })
 
-KitsuneEventTab:AddButton({
+KitsuneEventTab:AddToggle({
 	Name = "Auto Collect Azure Ember",
 	Default = false,
 	Callback = function(Value)
-		print(Value)
-	end    
 })
 
 BendruHub:Init()
