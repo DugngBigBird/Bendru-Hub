@@ -180,9 +180,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function Electro()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
@@ -195,9 +192,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function FishmanKarate()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
@@ -210,9 +204,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function DragonClaw()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
@@ -225,9 +216,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function Superhuman()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
@@ -240,9 +228,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function DeathStep()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
@@ -255,9 +240,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function SharkmanKarate()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
@@ -270,9 +252,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function ElectricClaw()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
@@ -285,9 +264,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function DragonTalon()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
@@ -300,9 +276,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function Godhuman()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
@@ -315,9 +288,6 @@ ShopTab:AddButton({
   	end    
 })
 
-local Section = ShopTab:AddSection({
-    Name = "         "
-   })
 
 function SanguineArt()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
@@ -354,7 +324,7 @@ KitsuneEventTab:AddToggle({
 	Name = "Auto Collect Azure Ember",
 	Default = false,
 	Callback = function(Value)
-		AutoCollectAzureEmber(Value)
+		AutoAzureEmber(Value)
 	end    
 })
 
