@@ -137,7 +137,7 @@ local Section = MicsTab:AddSection({
     Name = "Kitsune Event"
    })
 
-   local Section = SettingsTab:AddSection({
+   local Section = ShopTab:AddSection({
     Name = "Melee Shop"
    })
 
@@ -174,60 +174,159 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
 end
 
 ShopTab:AddButton({
-	Name = "Black Leg (150,000$)",
+	Name = "                       Black Leg ($150,000)",
 	Callback = function()
 		BlackLeg()
   	end    
 })
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
 
 function Electro()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
 end
 
 ShopTab:AddButton({
-	Name = "Electro (500,000$)",
+	Name = "                       Electro ($500,000)",
 	Callback = function()
 		Electro()
   	end    
 })
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
 
 function FishmanKarate()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
 end
 
 ShopTab:AddButton({
-	Name = "Fishman Karate (750,000$)",
+	Name = "                       Fishman Karate ($750,000)",
 	Callback = function()
 		FishmanKarate()
   	end    
 })
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
 
 function DragonClaw()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
 end
 
 ShopTab:AddButton({
-	Name = "            Dragon Claw (1,500ƒ)",
+	Name = "                       Dragon Claw (ƒ1,500)",
 	Callback = function()
 		DragonClaw()
   	end    
 })
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
 
 function Superhuman()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
 end
 
 ShopTab:AddButton({
-	Name = "Superhuman (3,000,000$)",
+	Name = "                       Superhuman ($3,000,000)",
 	Callback = function()
 		Superhuman()
   	end    
 })
 
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
+
+function DeathStep()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
+end
+
 ShopTab:AddButton({
-	Name = "Death Step (2,500,000$ And 5,000ƒ)",
+	Name = "                       Death Step ($2,500,000 & ƒ5,000)",
 	Callback = function()
-		BringFruit()
+		DeathStep()
+  	end    
+})
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
+
+function SharkmanKarate()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+end
+
+ShopTab:AddButton({
+	Name = "                       Sharkman Karate($2,500,000 & ƒ5,000)",
+	Callback = function()
+		SharkmanKarate()
+  	end    
+})
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
+
+function ElectricClaw()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
+end
+
+ShopTab:AddButton({
+	Name = "                       Electric Claw ($3,000,000 & ƒ5,000)",
+	Callback = function()
+		ElectricClaw()
+  	end    
+})
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
+
+function DragonTalon()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
+end
+
+ShopTab:AddButton({
+	Name = "                       Dragon Talon ($3,000,000 & ƒ5,000)",
+	Callback = function()
+		DragonTalon()
+  	end    
+})
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
+
+function Godhuman()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
+end
+
+ShopTab:AddButton({
+	Name = "                       Godhuman ($5,000,000 & ƒ5,000)",
+	Callback = function()
+		Godhuman()
+  	end    
+})
+
+local Section = ShopTab:AddSection({
+    Name = "         "
+   })
+
+function SanguineArt()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
+end
+
+ShopTab:AddButton({
+	Name = "                       Sanguine Art ($5,000,000 & ƒ5,000)",
+	Callback = function()
+		SanguineArt()
   	end    
 })
 
