@@ -124,10 +124,6 @@ local Section = MicsTab:AddSection({
     Name = "Fruit"
    })
 
-   local Section = KitsuneEventTab:AddSection({
-    Name = "Kitsune Event"
-   })
-
    local Section = ShopTab:AddSection({
     Name = "Melee Shop"
    })
@@ -322,7 +318,11 @@ GeneralTab:AddToggle({
 	end    
 })
 
-KitsuneEventTab:AddToggle({
+local Section = KitsuneEventTab:AddSection({
+    Name = "Kitsune Event"
+   })
+
+KitsuneEventTab:AddButton({
 	Name = "Auto Collect Azure Ember",
 	Default = false,
 	Callback = function(Value)
