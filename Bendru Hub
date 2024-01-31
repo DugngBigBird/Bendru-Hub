@@ -12,10 +12,36 @@ BendruHub:MakeNotification({
 --Value
 _G.AutoFarmLevel = true
 _G.SelectWeapon = "Melee"
+--------------------
+local Level_Max = 2550
 
---Funcition
+local placeId = game.PlaceId
+if game.PlaceId == 2753915549 then
+	W1 = true
+elseif game.PlaceId == 4442272183 then
+	W2 = true
+elseif game.PlaceId == 7449423635 then
+	W3 = true
+end
 
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates")
+if game:IsLoaded() then
+	pcall(function()
+		repeat wait()
+			game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
+			game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
+		until not game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") or not game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn")
+	end)
+	end
+	
+	function UnEquipWeapon(Weapon)
+	if game.Players.LocalPlayer.Character:FindFirstChild(Weapon) then
+		_G.NotAutoEquip = true
+		task.wait(.5)
+		game.Players.LocalPlayer.Character:FindFirstChild(Weapon).Parent = game.Players.LocalPlayer.Backpack
+		task.wait(.1)
+		_G.NotAutoEquip = false
+	end
+	end
 
 --Tự động bật Haki Buso khi vào game
 function AutoHakiAura()
