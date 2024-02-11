@@ -400,33 +400,37 @@ if World2 then
     end)
 end
 
-StatsAESPTab:AddToggle("ESP Player",false,function(a)
-    ESPPlayer = a
-    while ESPPlayer do wait()
-        UpdatePlayerChams()
-    end
-end)
+StatsAESPTab:AddToggle({
+	Name = "ESP Player",
+	Default = false,
+	Callback = function(a)
+		UpdatePlayerChams(Value)
+	end    
+})
 
-StatsAESPTab:AddToggle("ESP Chest",false,function(a)
-    ChestESP = a
-    while ChestESP do wait()
-        UpdateChestChams() 
-    end
-end)
+StatsAESPTab:AddToggle({
+	Name = "ESP Chest",
+	Default = false,
+	Callback = function(a)
+		UpdateChestChams(Value)
+	end    
+})
 
-StatsAESPTab:AddToggle("ESP Flower",false,function(a)
-    FlowerESP = a
-    while FlowerESP do wait()
-        UpdateFlowerChams() 
-    end
-end)
+StatsAESPTab:AddToggle({
+	Name = "ESP Flower",
+	Default = false,
+	Callback = function(a)
+		UpdateFlowerChams(Value)
+	end    
+})
 
-StatsAESPTab:AddToggle("ESP Devil Fruit",false,function(a)
-    DevilFruitESP = a
-    while DevilFruitESP do wait()
-        UpdateDevilChams() 
-    end
-end)
+StatsAESPTab:AddToggle({
+	Name = "ESP Devil Fruit ",
+	Default = false,
+	Callback = function(a)
+		UpdateDevilChams(Value)
+	end    
+})
 
 
 
