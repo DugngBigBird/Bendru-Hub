@@ -451,35 +451,35 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(a)
 		ESPPlayer = a
-		UpdatePlayerChams()
+		while UpdatePlayerChams() do wait()
 	end  
-})
+end})
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Chest",
 	Default = false,
 	Callback = function(a)
 		ChestESP = a
-		UpdateChestChams(Value)
+		while UpdateChestChams() do wait()
 	end    
-})
+end})
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Flower",
 	Default = false,
 	Callback = function(a)
 		FlowerESP = a
-		UpdateFlowerChams() 
+		while UpdateFlowerChams() do wait()
 	end
-})
+end})
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Devil Fruit ",
 	Default = false,
 	Callback = function(a)
 		DevilFruitESP = a
-		UpdateDevilChams() 
+		while UpdateDevilChams() do wait()
 	end   
-})
+end})
 
 BendruHub:Init()
