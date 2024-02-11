@@ -451,8 +451,7 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(a)
 		ESPPlayer = a
-		while ESPPlayer do wait()
-			UpdatePlayerChams()
+		UpdatePlayerChams()
 	end  
 })
 
@@ -460,6 +459,7 @@ StatsAESPTab:AddToggle({
 	Name = "ESP Chest",
 	Default = false,
 	Callback = function(a)
+		ChestESP = a
 		UpdateChestChams(Value)
 	end    
 })
@@ -469,9 +469,8 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(a)
 		FlowerESP = a
-		while FlowerESP do wait()
-			UpdateFlowerChams() 
-		end
+		UpdateFlowerChams() 
+	end
 })
 
 StatsAESPTab:AddToggle({
@@ -479,9 +478,8 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(a)
 		DevilFruitESP = a
-		while DevilFruitESP do wait()
-			UpdateDevilChams() 
-		end   
+		UpdateDevilChams() 
+	end   
 })
 
 BendruHub:Init()
