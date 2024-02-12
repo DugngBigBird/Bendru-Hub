@@ -103,12 +103,6 @@ SettingsTab:AddButton({
 --Esp
 
 local Section = StatsAESPTab:AddSection({
-    Name = "Stats"
-})
-
-
-
-local Section = StatsAESPTab:AddSection({
     Name = "ESP"
 })
 
