@@ -107,16 +107,16 @@ local Section = StatsAESPTab:AddSection({
 })
 
 StatsAESPTab:AddSlider({
-	Name = "Enter the stats number",
+	Name = "Select Point",
 	Min = 1,
-	Max = 10000,
-	Default = 1,
+	Max = 100,
+	Default = 5,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Point",
 	Callback = function(Value)
 		_G.Point = value
-		return "Point : " .. tostring(value)
+		return "Point" .. tostring(value)
 	end    
 })
 
