@@ -123,7 +123,6 @@ StatsAESPTab:AddSlider({
 StatsAESPTab:AddToggle({
 	Name = "Auto Stats Melee",
 	Default = false,
-	_G.Auto_Stats_Defense
 	Callback = function(Value)
 		_G.Auto_Stats_Melee = value
 		print(Value)
@@ -147,7 +146,6 @@ end)
 StatsAESPTab:AddToggle({
 	Name = "Auto Stats Defense",
 	Default = false,
-	_G.Auto_Stats_Defense
 	Callback = function(Value)
 		_G.Auto_Stats_Defense = value
 		print(Value)
@@ -171,7 +169,6 @@ end)
 StatsAESPTab:AddToggle({
 	Name = "Auto Stats Sword",
 	Default = false,
-	_G.Auto_Stats_Sword
 	Callback = function(Value)
 		_G.Auto_Stats_Sword = value
 		print(Value)
@@ -195,7 +192,6 @@ end)
 StatsAESPTab:AddToggle({
 	Name = "Auto Stats Gun",
 	Default = false,
-	_G.Auto_Stats_Gun
 	Callback = function(Value)
 		_G.Auto_Stats_Gun = value
 		print(Value)
@@ -219,7 +215,6 @@ end)
 StatsAESPTab:AddToggle({
 	Name = "Auto Stats Devil Fruit",
 	Default = false,
-	_G.Auto_Stats_Devil_Fruit
 	Callback = function(Value)
 		_G.Auto_Stats_Devil_Fruit = value
 		print(Value)
