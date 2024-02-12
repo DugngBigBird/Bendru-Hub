@@ -79,8 +79,6 @@ local SettingsTab = Window:MakeTab({
     PremiumOnly = false
 })
 
--------------------------------------------------------Setting-------------------------------------------------------
-
 --Rejoin & Hop Server
 
 SettingsTab:AddButton({
@@ -95,8 +93,6 @@ function Rejoin()
 		local p = game:GetService("Players").LocalPlayer
 		ts:Teleport(game.PlaceId, p)
 end
-
--------------------------------------------------------Stats & ESP-------------------------------------------------------
 
 --Esp
 
