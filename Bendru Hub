@@ -17,14 +17,6 @@ elseif game.PlaceId == 7449423635 then
 	World3 = true
 end
 
---function
-function Rejoin()
-    local ts = game:GetService("TeleportService")
-		local p = game:GetService("Players").LocalPlayer
-		ts:Teleport(game.PlaceId, p)
-end
-
-
 --Tabs
 
 local MainTab = Window:MakeTab({
@@ -98,13 +90,15 @@ SettingsTab:AddButton({
   	end    
 })
 
+function Rejoin()
+    local ts = game:GetService("TeleportService")
+		local p = game:GetService("Players").LocalPlayer
+		ts:Teleport(game.PlaceId, p)
+end
+
 -------------------------------------------------------Stats & ESP-------------------------------------------------------
 
 --Esp
-
-local Section = StatsAESPTab:AddSection({
-    Name = "ESP"
-})
 
 function isnil(thing)
 	return (thing == nil)
