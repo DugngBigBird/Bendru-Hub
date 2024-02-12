@@ -125,7 +125,6 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.Auto_Stats_Melee = value
-		print(Value)
 	end    
 })
 
@@ -148,7 +147,6 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.Auto_Stats_Defense = value
-		print(Value)
 	end    
 })
 
@@ -171,7 +169,6 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.Auto_Stats_Sword = value
-		print(Value)
 	end    
 })
 
@@ -194,7 +191,6 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.Auto_Stats_Gun = value
-		print(Value)
 	end    
 })
 
@@ -217,7 +213,6 @@ StatsAESPTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.Auto_Stats_Devil_Fruit = value
-		print(Value)
 	end    
 })
 
