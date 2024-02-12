@@ -464,14 +464,14 @@ StatsAESPTab:AddToggle({
 	end    
 })
 
-StatsAESPTab:AddToggle({
+StatsAESPTab:AddToggle(
 	Name = "ESP Flower",
 	Default = false,
 	Callback = function(a)
 		FlowerESP = a
 		while UpdateFlowerChams() do wait()
 	end
-})
+end)
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Devil Fruit ",
