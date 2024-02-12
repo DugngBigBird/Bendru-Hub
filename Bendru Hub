@@ -116,7 +116,6 @@ StatsAESPTab:AddSlider({
 	ValueName = "Point",
 	Callback = function(Value)
 		_G.Point = value
-		return "Point" .. tostring(value)
 	end    
 })
 
@@ -128,7 +127,7 @@ StatsAESPTab:AddToggle({
 	end    
 })
 
-spawn(function()
+spawn(function(value)
 	while wait() do
 		if _G.Auto_Stats_Melee then
 			local args = {
@@ -150,7 +149,7 @@ StatsAESPTab:AddToggle({
 	end    
 })
 
-spawn(function()
+spawn(function(value)
 	while wait() do
 		if _G.Auto_Stats_Defense then
 			local args = {
@@ -172,7 +171,7 @@ StatsAESPTab:AddToggle({
 	end    
 })
 
-spawn(function()
+spawn(function(value)
 	while wait() do
 		if _G.Auto_Stats_Sword then
 			local args = {
@@ -194,7 +193,7 @@ StatsAESPTab:AddToggle({
 	end    
 })
 
-spawn(function()
+spawn(function(value)
 	while wait() do
 		if _G.Auto_Stats_Gun then
 			local args = {
@@ -216,7 +215,7 @@ StatsAESPTab:AddToggle({
 	end    
 })
 
-spawn(function()
+spawn(function(value)
 	while wait() do
 		if _G.Auto_Stats_Devil_Fruit then
 			local args = {
