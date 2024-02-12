@@ -453,7 +453,7 @@ StatsAESPTab:AddToggle({
 		ESPPlayer = a
 		while UpdatePlayerChams() do wait()
 	end  
-end})
+})
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Chest",
@@ -462,7 +462,7 @@ StatsAESPTab:AddToggle({
 		ChestESP = a
 		while UpdateChestChams() do wait()
 	end    
-end})
+})
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Flower",
@@ -471,7 +471,7 @@ StatsAESPTab:AddToggle({
 		FlowerESP = a
 		while UpdateFlowerChams() do wait()
 	end
-end})
+})
 
 StatsAESPTab:AddToggle({
 	Name = "ESP Devil Fruit ",
@@ -480,6 +480,6 @@ StatsAESPTab:AddToggle({
 		DevilFruitESP = a
 		while UpdateDevilChams() do wait()
 	end   
-end})
+})
 
 BendruHub:Init()
