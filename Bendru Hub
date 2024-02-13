@@ -675,7 +675,7 @@ function QuestCheck()
     end
     end
 
-	function CancelTween(FUCK)
+	function CancelTween(Value)
 		if not FUCK then
 			_G.StopTween = true
 			wait()
@@ -694,7 +694,7 @@ function QuestCheck()
 		Default = false,
 		Callback = function(Value)
 			_G.LevelFarm = Value
-			CancelTween(FUCK)
+			CancelTween(Value)
 		end    
 	})
 
