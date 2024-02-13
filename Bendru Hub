@@ -715,38 +715,6 @@ function QuestCheck()
 		end)
 	end
 
-	spawn(function()
-		pcall(function()
-			game:GetService("RunService").Stepped:Connect(function()
-				if _G.TrainToc or _G.Tansat or _G.Zone6 or _G.KillFishCrew or _G.KillTerrorShark or _G.KillShark or _G.KillPiranha or _G.AutoTrials or _G.TrialV4 or _G.OneClick or _G.AutoHallowSycthe or _G.AutoDarkDagger or _G.AutoBudySword or _G.AutoCarvender or _G.AutoTwinHook or _G.AutoKen or _G.AutoRengoku or _G.AutoSecondSea or _G.Tweenfruit or _G.AutoMob or _G.ThirdSea or _G.AutoSwan or _G.Autopole or _G.AutoSaber or _G.AutoBartilo or _G.AutoBoss or _G.DjtFactorybantumlum or _G.DjtElite or _G.DjtPirates or _G.AutoBone or _G.LevelFarm or _G.AutoKatakuri or NoClip == true then
-					for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
-						if v:IsA("BasePart") then
-							v.CanCollide = false
-						end
-					end
-				end
-			end)
-		end)
-	end)
-
-	spawn(function()
-		while task.wait() do
-			pcall(function()
-				if _G.TrainToc or _G.Tansat or _G.Zone6 or _G.KillFishCrew or _G.KillTerrorShark or _G.KillShark or _G.KillPiranha or _G.AutoTrials or _G.TrialV4 or _G.OneClick or _G.AutoHallowSycthe or _G.AutoDarkDagger or _G.AutoBudySword or _G.AutoCarvender or _G.AutoTwinHook or _G.AutoKen or _G.AutoRengoku or _G.AutoSecondSea or _G.Tweenfruit or _G.AutoMob or _G.ThirdSea or _G.AutoSwan or _G.Autopole or _G.AutoSaber or _G.AutoBartilo or _G.AutoBoss or _G.DjtFactorybantumlum or _G.DjtElite or _G.DjtPirates or _G.AutoBone or _G.LevelFarm or _G.AutoKatakuri or NoClip == true then
-					if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
-						local Noclip = Instance.new("BodyVelocity")
-						Noclip.Name = "BodyClip"
-						Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-						Noclip.MaxForce = Vector3.new(100000,100000,100000)
-						Noclip.Velocity = Vector3.new(0,0,0)
-					end
-				else
-					game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
-				end
-			end)
-		end
-	end)
-
 	getgenv().NoDieEffect = true
 	if getgenv().NoDieEffect then
 		local effectContainer = game:GetService("ReplicatedStorage").Effect.Container
