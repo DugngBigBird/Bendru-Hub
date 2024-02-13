@@ -56,6 +56,12 @@ function AntiKick()
 end
 AntiKick()
 
+--Farm level
+
+local Section = MainTab:AddSection({
+    Name = "Farm Level"
+})
+
 function QuestCheck()
     MyLevel = game: GetService("Players").LocalPlayer.Data.Level.Value
     if Sea1 then
@@ -675,7 +681,7 @@ function QuestCheck()
     end
     end
 
-	function CancelTween(Value)
+	function CancelTween(FUCK)
 		if not FUCK then
 			_G.StopTween = true
 			wait()
@@ -688,6 +694,74 @@ function QuestCheck()
 			NoClip = false
 		end
 	end
+
+    spawn(function()
+        while task.wait() do
+            if _G.LevelFarm then
+                pcall(function()
+                    QuestCheck()
+                    local questTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                    if not string.find(questTitle, NameMon) or not game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                        if BypassTP then
+                            if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude > 2000 then
+                                BP(CFrameMon)
+                            elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude < 2000 then
+                                Tween(CFrameQuest)
+                            end
+                        else
+                            Tween(CFrameQuest)
+                        end
+                        if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, LevelQuest)
+                        end
+                    elseif string.find(questTitle, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible then
+                        for _, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and v.Name == Mon then
+                                repeat
+                                    task.wait()
+                                    AutoHaki()
+                                    EquipTool(SelectWP)
+                                    Tween(v.HumanoidRootPart.CFrame * CFrame.new(2, 20, 2))
+                                    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.HumanoidRootPart.CanCollide = false
+                                    PosMon = v.HumanoidRootPart.CFrame
+                                    BringMob = true
+                                until not _G.LevelFarm or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
+                            end
+                        end
+                    else
+                        Tween(CFrameMon)
+                        BringMob = false
+                        if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
+                            Tween(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(2, 20, 2))
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+
+MainTab:AddParagraph("Select Weapon Firts To Farm Level")
+
+MainTab:AddDropdown({
+	Name = "Select Weapon",
+	Default = "...",
+	Options = {"Melee", "Sword"},
+	Callback = function(Value)
+		SelectWP = Value
+	end    
+})
+
+	MainTab:AddToggle({
+		Name = "Auto Farm",
+		Default = false,
+		Callback = function(Value)
+			_G.LevelFarm = Value
+			CancelTween(FUCK)
+		end    
+	})
 
 --Tabs
 
@@ -760,7 +834,7 @@ local Section = TeleportTab:AddSection({
 if Sea1 then
 	TeleportTab:AddDropdown({
 		Name = "Select Island",
-		Default = "",
+		Default = "...",
 		Options = {"WindMill",
 		"Marine",
 		"Middle Town",
@@ -790,7 +864,7 @@ end
 if Sea2 then
 TeleportTab:AddDropdown({
     Name = "Select Island",
-    Default = "",
+    Default = "...",
     Options = {"The Cafe",
     "Frist Spot",
     "Dark Area",
@@ -818,7 +892,7 @@ end
 if Sea3 then
 TeleportTab:AddDropdown({
     Name = "Select Island",
-    Default = "",
+    Default = "...",
     Options = {"Mansion",
     "Port Town",
     "Great Tree",
@@ -831,8 +905,8 @@ TeleportTab:AddDropdown({
     "Peanut Island",
     "Cake Island",
     "Cocoa Island",
-    "Tiki Outpost New",
-    "Candy Island New⛄"},
+    "Candy Island⛄"
+    "Tiki Outpost New",},
     Flag = "Select Island",
     Save = true,
     Callback = function(Value)
@@ -1026,6 +1100,13 @@ TeleportTab:AddButton({
     Callback = function()
         TweenIsland()
     end
+})
+
+Teleport:AddButton({
+	Name = "Stop Teleport",
+	Callback = function()
+        CancelTween(All)
+  	end    
 })
 
 
