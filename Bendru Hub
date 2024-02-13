@@ -766,7 +766,7 @@ local Section = TeleportTab:AddSection({
 if Sea1 then
 	TeleportTab:AddDropdown({
 		Name = "Select Island",
-		Default = "...",
+		Default = "",
 		Options = {"WindMill",
 		"Marine",
 		"Middle Town",
@@ -796,7 +796,7 @@ end
 if Sea2 then
 TeleportTab:AddDropdown({
     Name = "Select Island",
-    Default = "...",
+    Default = "",
     Options = {"The Cafe",
     "Frist Spot",
     "Dark Area",
@@ -824,7 +824,7 @@ end
 if Sea3 then
 TeleportTab:AddDropdown({
     Name = "Select Island",
-    Default = "...",
+    Default = "",
     Options = {"Mansion",
     "Port Town",
     "Great Tree",
