@@ -695,8 +695,6 @@ function QuestCheck()
 		end
 	end
 
-MainTab:AddParagraph("Select Weapon Firts To Farm Level")
-
 MainTab:AddDropdown({
 	Name = "Select Weapon",
 	Default = "...",
