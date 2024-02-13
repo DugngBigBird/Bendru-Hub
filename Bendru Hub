@@ -1028,15 +1028,6 @@ TeleportTab:AddButton({
     end
 })
 
-Teleport:AddButton({
-	Name = "Stop Teleport",
-	Callback = function()
-        CancelTween(All)
-  	end    
-})
-
-
-
 --Rejoin & Hop Server
 
 SettingsTab:AddButton({
