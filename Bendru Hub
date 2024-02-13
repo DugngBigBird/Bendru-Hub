@@ -674,15 +674,6 @@ function QuestCheck()
     end
     end
     end
-	
-MainTab:AddToggle({
-	Name = "Auto Farm",
-	Default = false,
-	Callback = function(Value)
-		_G.LevelFarm = Value
-		CancelTween(_G.LevelFarm)
-	end    
-})
 
 --Tabs
 
