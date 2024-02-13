@@ -694,7 +694,7 @@ function QuestCheck()
 		Default = false,
 		Callback = function(Value)
 			_G.LevelFarm = Value
-			CancelTween(_G.LevelFarm)
+			CancelTween(FUCK)
 		end    
 	})
 
