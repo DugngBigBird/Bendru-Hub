@@ -675,6 +675,29 @@ function QuestCheck()
     end
     end
 
+	function CancelTween(FUCK)
+		if not FUCK then
+			_G.StopTween = true
+			wait()
+			Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+			wait()
+			if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+			end
+			_G.StopTween = false
+			NoClip = false
+		end
+	end
+
+	MainTab:AddToggle({
+		Name = "Auto Farm",
+		Default = false,
+		Callback = function(Value)
+			_G.LevelFarm = Value
+			CancelTween(_G.LevelFarm)
+		end    
+	})
+
 --Tabs
 
 local MainTab = Window:MakeTab({
@@ -865,20 +888,6 @@ function Teleport(P)
         wait(Distance/Speed)
         NoClip = false
     end)
-end
-
-function CancelTween(FUCK)
-    if not FUCK then
-        _G.StopTween = true
-        wait()
-        Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-        wait()
-        if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
-        end
-        _G.StopTween = false
-        NoClip = false
-    end
 end
 
 function TweenIsland()
