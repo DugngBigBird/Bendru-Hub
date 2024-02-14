@@ -380,7 +380,33 @@ TeleportTab:AddButton({
 })
 
 local Section = TeleportTab:AddSection({
-	Name = "Teleport Island"
+	Name = "Teleport Sea"
+})
+
+function teleporttosea()
+    if _G.SelectSea == "1" then
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+    elseif _G.SelectSea == "2" then
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+    elseif _G.SelectSea == "3" then
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+    end
+end
+
+TeleportTab:AddDropdown({
+	Name = "Select Sea To Teleport",
+	Default = "...",
+	Options = {"1", "2", "3"},
+	Callback = function(Value)
+		_G.SelectSea = Value
+	end    
+})
+
+TeleportTab:AddButton({
+    Name = "Teleport To Sea",
+    Callback = function()
+        teleporttosea()
+    end
 })
 
 --Rejoin & Hop Server
