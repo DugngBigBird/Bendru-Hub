@@ -137,29 +137,6 @@ FruitTab:AddToggle({
     end    
 })
 
-FruitTab:AddToggle({
-    Name = "Teleport To Fruit",
-    Default = false,
-    Flag = "Teleport To Fruit",
-    Save = true,
-    Callback = function(Value)
-        _G.Tweenfruit = Value
-        CancelTween(_G.Tweenfruit)
-    end    
-})
-
-spawn(function()
-    while wait(.1) do
-        if _G.Tweenfruit then
-            for i,v in pairs(game.Workspace:GetChildren()) do
-                if string.find(v.Name, "Fruit") then
-                    Tween(v.Handle.CFrame)
-                end
-            end
-        end
-	end
-end)
-
 spawn(function()
     while task.wait() do
         if _G.AutoStoreFruit then
