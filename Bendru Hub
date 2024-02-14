@@ -573,15 +573,6 @@ SettingsTab:AddButton({
   	end    
 })
 
-SettingsTab:AddButton({
-    Name = "Hop Sever",
-    Callback = function()
-        Hop()
-      end    
-})
-
-
-
 function Rejoin()
     local ts = game:GetService("TeleportService")
 		local p = game:GetService("Players").LocalPlayer
@@ -639,16 +630,6 @@ SettingsTab:AddToggle({
 	Callback = function(Value)
 		_G.FastAttack = Value
 	end    
-})
-
---Stats & ESP
-
-local Section = StatsAESPTab:AddSection({
-	Name = "Stats"
-})
-
-local Section = StatsAESPTab:AddSection({
-	Name = "ESP"
 })
 
 BendruHub:Init()
