@@ -700,22 +700,29 @@ StatsAESPTab:AddToggle({
 })
 
 if Sea2 then
-    DevilFruit:Button("TP Flower Red",function()
-        for i,v in pairs(game.Workspace:GetDescendants()) do
-            if v.Name == "Flower2" then
-                topos(v.CFrame)
-            end
-        end
-    end)
-
-    DevilFruit:Button("TP Flower Blue",function()
-        for i,v in pairs(game.Workspace:GetDescendants()) do
+    StatsAESPTab:AddButton({
+        Name = "TP Flower Blue",
+        Callback = function()
+          end  
+          for i,v in pairs(game.Workspace:GetDescendants()) do
             if v.Name == "Flower1" then
                 topos(v.CFrame)
             end
         end
-    end)
-end
+    end  
+    })
+
+    StatsAESPTab:AddButton({
+        Name = "TP Flower Red",
+        Callback = function()
+          end  
+          for i,v in pairs(game.Workspace:GetDescendants()) do
+            if v.Name == "Flower2" then
+                topos(v.CFrame)
+            end
+        end
+    end  
+})
 
 function isnil(thing)
     return (thing == nil)
