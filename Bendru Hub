@@ -9,8 +9,6 @@ BendruHub:MakeNotification({
 	Time = 5
 })
 
-local Level_Max = 2550
---------------------------------// Sea \\----------------------------
 if game.PlaceId == 2753915549 then
     Sea1 = true
 elseif game.PlaceId == 4442272183 then
@@ -82,14 +80,6 @@ local SettingsTab = Window:MakeTab({
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
-
---Teleport
-
-local Section = TeleportTab:AddSection({
-    Name = "Teleport Island"
-})
-
-
 
 --Rejoin & Hop Server
 
