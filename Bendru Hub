@@ -81,6 +81,12 @@ local SettingsTab = Window:MakeTab({
     PremiumOnly = false
 })
 
+--Teleport Island
+
+local Section = TeleportTab:AddSection({
+	Name = "No lo diga"
+})
+
 --Rejoin & Hop Server
 
 SettingsTab:AddButton({
