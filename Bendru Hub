@@ -84,7 +84,68 @@ local SettingsTab = Window:MakeTab({
 --Teleport Island
 
 local Section = TeleportTab:AddSection({
-	Name = "No lo diga"
+	Name = "Teleport Island"
+})
+
+function Tween(Pos)
+    local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+    if game.Players.LocalPlayer.Character.Humanoid.Sit then
+        game.Players.LocalPlayer.Character.Humanoid.Sit = false
+    end
+    pcall(function()
+        local tween = game:GetService("TweenService"):Create(
+            game.Players.LocalPlayer.Character.HumanoidRootPart,
+            TweenInfo.new(Distance/300, Enum.EasingStyle.Linear),
+            {CFrame = Pos}
+        )
+        tween:Play()
+        if Distance <= 300 or _G.StopTween then
+            tween:Cancel()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+            NoClip = false
+        end
+    end)
+end
+
+function Teleport(P)
+    local Distance = (P.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+    local Speed = Distance >= 1 and 300 or 1
+    pcall(function()
+        local teleport = game:GetService("TweenService"):Create(
+            game.Players.LocalPlayer.Character.HumanoidRootPart,
+            TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
+            {CFrame = P}
+        )
+        teleport:Play()
+        if _G.StopTween then
+            teleport:Cancel()
+            NoClip = false
+        end
+        NoClip = true
+        wait(Distance/Speed)
+        NoClip = false
+    end)
+end
+
+function CancelTween(FUCK)
+    if not FUCK then
+        _G.StopTween = true
+        wait()
+        Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        wait()
+        if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+        end
+        _G.StopTween = false
+        NoClip = false
+    end
+end
+
+Teleport:AddButton({
+    Name = "Teleport To Island",
+    Callback = function()
+        TweenIsland()
+    end
 })
 
 --Rejoin & Hop Server
