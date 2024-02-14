@@ -83,7 +83,7 @@ local SettingsTab = Window:MakeTab({
 
 --Race
 
-local Moon = RaceTab:AddLabel("Wait For Me Coding Notifi %Moon")
+local Moon = RaceTab:AddLabel("Wait For Me Coding Notifi Moon")
 
 spawn(function()
     while wait() do
@@ -629,6 +629,18 @@ function Hop()
             end
         end
     end
+    function Teleport() 
+        while wait() do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~= "" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+    Teleport()
+end
 
 function Rejoin()
     local ts = game:GetService("TeleportService")
