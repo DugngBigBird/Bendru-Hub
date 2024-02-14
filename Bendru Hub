@@ -81,6 +81,135 @@ local SettingsTab = Window:MakeTab({
     PremiumOnly = false
 })
 
+--Raid
+
+local Section = RaidTab:AddSection({
+	Name = "Raid"
+})
+
+_G.SelectChip = selectraids or ""
+    Raidslist = {}
+    RaidsModule = require(game.ReplicatedStorage.Raids)
+    for i,v in pairs(RaidsModule.raids) do
+        table.insert(Raidslist,v)
+    end
+    for i,v in pairs(RaidsModule.advancedRaids) do
+        table.insert(Raidslist,v)
+end
+
+spawn(function()    
+    while wait() do
+        if _G.OneClick then
+            if not game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",_G.SelectChip)
+                else
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") and not game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
+                    if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Special Microchip") then
+                        if Sea2 then
+                            fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
+                        elseif Sea3 then
+                            fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if _G.OneClick then
+            for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    repeat wait(.1)
+                        v.Humanoid.Health = 0
+                        v.HumanoidRootPart.CanCollide = false
+                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                    until not _G.OneClick or not v.Parent or v.Humanoid.Health <= 0
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.OneClick then
+                if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
+                    if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5").CFrame*RaidPos)
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4").CFrame*RaidPos)
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3").CFrame*RaidPos)
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2").CFrame*RaidPos)
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1").CFrame*RaidPos)
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+Type = 1
+spawn(function()
+while wait(.1) do
+    if Type == 1 then
+        RaidPos = CFrame.new(0,25,0)
+    elseif Type == 2 then
+        RaidPos = CFrame.new(0,25,-40)
+    elseif Type == 3 then
+        RaidPos = CFrame.new(40,25,0)
+    elseif Type == 4 then
+        RaidPos = CFrame.new(0,25,40)	
+    elseif Type == 5 then
+        RaidPos = CFrame.new(-40,25,0)
+    elseif Type == 6 then
+        RaidPos = CFrame.new(0,25,0)
+    end
+    end
+end)
+
+spawn(function()
+    while wait(.1) do
+        Type = 1
+        wait(0.9)
+        Type = 2
+        wait(0.9)
+        Type = 3
+        wait(0.9)
+        Type = 4
+        wait(0.9)
+        Type = 5
+        wait(0.9)
+    end
+end)
+
+RaidTab:AddDropdown({
+    Name = "Select Chips",
+    Default = "",
+    Options = Raidslist,
+    Flag = "Select Chips",
+    Save = true,
+    Callback = function(Value)
+        _G.SelectChip = Value
+    end    
+})
+
+RaidTab:AddToggle({
+    Name = "Raid",
+    Default = false,
+    Flag = "Auto Start",
+    Save = true,
+    Callback = function(Value)
+        _G.OneClick = Value
+    end    
+})
+
 --Teleport Island
 
 local Section = TeleportTab:AddSection({
