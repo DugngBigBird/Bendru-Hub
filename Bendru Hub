@@ -823,8 +823,8 @@ spawn(function()
                             if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
                                 topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(0,20,0))
                             end
-                        end
-                    end
+                        end)
+                    end)
 
                     local PosBone = CFrame.new(-9508.5673828125, 142.1398468017578, 5737.3603515625)
                     local PosCake = CFrame.new(-2091.911865234375, 70.00884246826172, -12142.8359375)
