@@ -9,9 +9,6 @@ BendruHub:MakeNotification({
 	Time = 5
 })
 
-local Notification = require(game:GetService("ReplicatedStorage").Notification)
-Notification.new("<Color=Yellow> Made By A Vietnamese Person  <Color=/>"):Display()
-
 if game.PlaceId == 2753915549 then
     Sea1 = true
 elseif game.PlaceId == 4442272183 then
