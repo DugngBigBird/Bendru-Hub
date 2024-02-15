@@ -731,7 +731,7 @@ local Section = MainTab:AddSection({
 })
 
 local WeaponList = {"Melee","Sword",}
-G:AddDropdown({
+MainTab:AddDropdown({
 	Name = "Select Weapon",
 	Default = "Melee",
     Flag = "Select Weapon",
@@ -764,6 +764,29 @@ task.spawn(
         end
     end
 )
+
+local ModeList = {"Level","Farm Bone","Farm Dought Boss"}
+MainTab:AddDropdown({
+	Name = "Select Mode Farm",
+	Default = "Level",
+    Flag = "Select Mode Farm",
+    Save = true,
+	Options = ModeList,
+	Callback = function(Value)
+		_G.SelectFarm = Value
+	end    
+})
+
+G:AddToggle({
+	Name = "Auto Farm",
+	Default = false,
+    Flag = "Auto Farm",
+    Save = true,
+	Callback = function(Value)
+		_G.Farm = Value
+        CancelTween(_G.Farm)
+	end    
+})
 
 spawn(function()
     while wait() do
