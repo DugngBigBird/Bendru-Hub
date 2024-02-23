@@ -734,6 +734,7 @@ function QuestCheck()
     CFrameMon = CFrame.new(-16933.2129, 93.3503036, 999.450989)
     end
 end
+end
 
 local Section = MainTab:AddSection({
 	Name = "Select Weapon"
