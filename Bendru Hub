@@ -1047,7 +1047,7 @@ MainTab:AddToggle({
     Save = true,
 	Callback = function(Value)
 		_G.Farm = Value
-        StopTween(_G.Farm)
+        CancelTween(_G.Farm)
 	end    
 })
 
