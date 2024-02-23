@@ -304,13 +304,13 @@ end)
 
 --Sea Event
 
-local Frozen = SeaEventTab:AddLabel("Frozen Dimension : ❌")
+local Frozen = SeaEventTab:AddLabel("Frozen Dimension : ❌ Not Spawn")
 
 spawn(function()
     while wait() do
         if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
             Frozen:Set("Frozen Dimension : ✅ Spawn")
-        else
+        elseif
             Frozen:Set("Frozen Dimension : ❌ Not Spawn")
         end
     end
