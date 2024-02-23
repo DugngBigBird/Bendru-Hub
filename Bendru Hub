@@ -796,6 +796,138 @@ spawn(function()
                             end
                         end
                     end
+                elseif _G.SelectFarm == "Farm Bone" then
+                    pcall(function()
+                        if BypassTP then
+                            if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - PosBone.Position).Magnitude > 2000 then
+                                BTP(PosBone)
+                            elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - PosBone.Position).Magnitude < 2000 then
+                                topos(PosBone)
+                            end
+                        else
+                            topos(PosBone)
+                        end
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie") or game:GetService("Workspace").Enemies:FindFirstChild("Demonic Soul") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "Reborn Skeleton" or v.Name == "Living Zombie" or v.Name == "Demonic Soul" or v.Name == "Posessed Mummy" then
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        repeat task.wait()
+                                            TurnOnBuso()
+                                            EquipWeapon(_G.SelectWeapon)
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            v.Head.CanCollide = false 
+                                            StartCheckBone = true
+                                            PosMonBone = v.HumanoidRootPart.CFrame
+                                            topos(v.HumanoidRootPart.CFrame * Pos)
+                                            game:GetService("VirtualUser"):CaptureController()
+                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                        until not _G.SelectFarm == "Farm Bone" or not v.Parent or v.Humanoid.Health <= 0
+                                    end
+                                end
+                            end
+                        else
+                            StartCheckBone = false
+                            topos(CFrame.new(-9506.234375, 172.130615234375, 6117.0771484375))
+                            for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
+                                if v.Name == "Reborn Skeleton" then
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                elseif v.Name == "Living Zombie" then
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                elseif v.Name == "Demonic Soul" then
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                elseif v.Name == "Posessed Mummy" then
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                end
+                            end
+                        end
+                    end)
+                elseif _G.SelectFarm == "Farm Dought Boss" then
+                    pcall(function()
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "Cake Prince" then
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        repeat task.wait()
+                                            TurnOnBuso()
+                                            EquipWeapon(_G.SelectWeapon)
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                            topos(v.HumanoidRootPart.CFrame * Pos)
+                                            game:GetService("VirtualUser"):CaptureController()
+                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                        until not _G.SelectFarm == "Farm Dought Boss" or not v.Parent or v.Humanoid.Health <= 0
+                                    end
+                                end
+                            end
+                        else
+                            if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince") then
+                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,40,2))
+                            else
+                                if KillMob == 0 then
+                                end
+                                if game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 1 then
+                                    if game:GetService("Workspace").Enemies:FindFirstChild("Cookie Crafter") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Guard") or game:GetService("Workspace").Enemies:FindFirstChild("Baking Staff") or game:GetService("Workspace").Enemies:FindFirstChild("Head Baker") then
+                                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                            if v.Name == "Cookie Crafter" or v.Name == "Cake Guard" or v.Name == "Baking Staff" or v.Name == "Head Baker" then
+                                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                                    repeat task.wait()
+                                                        TurnOnBuso()
+                                                        EquipWeapon(_G.SelectWeapon)
+                                                        v.HumanoidRootPart.CanCollide = false
+                                                        v.Humanoid.WalkSpeed = 0
+                                                        v.Head.CanCollide = false 
+                                                        v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                                        MagnetDought = true
+                                                        PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
+                                                        topos(v.HumanoidRootPart.CFrame * Pos)
+                                                        game:GetService("VirtualUser"):CaptureController()
+                                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                                    until not _G.SelectFarm == "Farm Dought Boss" or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") or KillMob == 0
+                                                end
+                                            end
+                                        end
+                                    else
+                                        MagnetDought = false
+                                        if BypassTP then
+                                            if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - PosCake.Position).Magnitude > 1500 then
+                                            BTP(PosCake)
+                                            elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - PosCake.Position).Magnitude < 1500 then
+                                            topos(PosCake)
+                                            end
+                                        else
+                                            topos(PosCake)
+                                        end
+                                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter") then
+                                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter").HumanoidRootPart.CFrame * CFrame.new(2,20,2)) 
+                                        else
+                                            if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Guard") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Guard").HumanoidRootPart.CFrame * CFrame.new(2,20,2)) 
+                                            else
+                                                if game:GetService("ReplicatedStorage"):FindFirstChild("Baking Staff") then
+                                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Baking Staff").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                                else
+                                                    if game:GetService("ReplicatedStorage"):FindFirstChild("Head Baker") then
+                                                        topos(game:GetService("ReplicatedStorage"):FindFirstChild("Head Baker").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                                    end
+                                                end
+                                            end
+                                        end                       
+                                    end
+                                else
+                                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
+                                        topos(game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                    else
+                                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince") then
+                                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end)
                 end
             end)
         end
@@ -853,6 +985,61 @@ spawn(
     end
 )
 
+local Section = MainTab:AddSection({
+	Name = "Select Weapon"
+})
+
+local WeaponList = {"Melee","Sword",}
+MainTab:AddDropdown({
+	Name = "Select Weapon",
+	Default = "Melee",
+    Flag = "Select Weapon",
+    Save = true,
+	Options = WeaponList,
+	Callback = function(Value)
+		_G.SelectWeapon = Value
+	end    
+})
+task.spawn(
+    function()
+        while wait() do
+            if _G.SelectWeapon == "Melee" then
+                for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Melee" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Sword" then
+                for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Sword" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            end
+        end
+    end
+)
+
+local Section = MainTab:AddSection({
+	Name = "Select Farm"
+})
+
+local ModeList = {"Level","Farm Bone","Farm Dought Boss"}
+MainTab:AddDropdown({
+	Name = "Select Mode Farm",
+	Default = "Level",
+    Flag = "Select Mode Farm",
+    Save = true,
+	Options = ModeList,
+	Callback = function(Value)
+		_G.SelectFarm = Value
+	end    
+})
+
 MainTab:AddToggle({
 	Name = "Farm",
 	Default = false,
@@ -860,7 +1047,6 @@ MainTab:AddToggle({
     Save = true,
 	Callback = function(Value)
 		_G.Farm = Value
-        _G.SelectFarm = Value
         StopTween(_G.Farm)
 	end    
 })
@@ -1518,6 +1704,34 @@ function Rejoin()
 		local p = game:GetService("Players").LocalPlayer
 		ts:Teleport(game.PlaceId, p)
 end
+
+--Bring
+
+local Section = MainTab:AddSection({
+	Name = "Bring Mobs"
+})
+
+local BringList = {"Super Large", "Large", "Normal", "low"}
+MainTab:AddDropdown({
+	Name = "Bring Mode",
+	Default = "Normal",
+    Flag = "Bring Mode",
+    Save = true,
+	Options = BringList,
+	Callback = function(Value)
+		_G.BringMode = Value
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Bring Mobs",
+	Default = true,
+    Flag = "Bring Mobs",
+    Save = true,
+	Callback = function(Value)
+		_G.BringMonster = Value
+	end    
+})
 
 --Fast Attack
 
