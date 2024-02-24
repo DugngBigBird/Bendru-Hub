@@ -52,6 +52,19 @@ spawn(
     end
 )
 
+spawn(function()
+    while wait() do
+        local rs = game:GetService("ReplicatedStorage")
+        local guiAssets = rs.Assets.GUI
+        local soundStorage = rs.Util.Sound.Storage.Other
+        guiAssets.DamageCounter.Enabled = false
+        soundStorage:FindFirstChild("LevelUp_Proxy"):Destroy()
+        soundStorage:FindFirstChild("LevelUp"):Destroy()
+        effectContainer.Respawn:Destroy()  
+        effectContainer.LevelUp:Destroy()
+    end
+end)
+
 --Tabs
 
 local MainTab = Window:MakeTab({
@@ -319,6 +332,26 @@ RaceTab:AddButton({
         Templeteleport()
   	end    
 })
+
+RaceTab:AddToggle({
+	Name = "Turn On V4",
+	Default = false,
+	Callback = function(Value)
+		_G.V4 = Value
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.V4 then
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+                wait(0.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+            end
+        end)
+    end
+end)
 
 function Templeteleport()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28282.5703125, 14896.8505859375, 105.1042709350586))
