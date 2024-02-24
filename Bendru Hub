@@ -302,6 +302,37 @@ spawn(function()
     end
 end)
 
+local Section = RaceTab:AddSection({
+	Name = "Templete Of Time"
+})
+
+RaceTab:AddButton({
+	Name = "Teleport On Great Tree",
+	Callback = function()
+      	TweenTopOnGreatTree()
+  	end    
+})
+
+RaceTab:AddButton({
+	Name = "Teleport To Templete Of Time",
+	Callback = function()
+        Templeteleport()
+  	end    
+})
+
+function Templeteleport()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28282.5703125, 14896.8505859375, 105.1042709350586))
+end
+
+function TweenTopOnGreatTree()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28282.5703125, 14896.8505859375, 105.1042709350586))
+    Teleport(ConNPCTemplete)
+    wait(0.5)
+    if (ConNPCTemplete.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
+        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("RaceV4Progress", "TeleportBack")
+    end
+end
+
 --Sea Event
 
 local Frozen = SeaEventTab:AddLabel("Frozen Dimension : ❌ Not Spawn")
@@ -792,34 +823,6 @@ function Rejoin()
 		ts:Teleport(game.PlaceId, p)
 end
 
---Bring
-
-local Section = MainTab:AddSection({
-	Name = "Bring Mobs"
-})
-
-local BringList = {"Super Large", "Large", "Normal", "low"}
-MainTab:AddDropdown({
-	Name = "Bring Mode",
-	Default = "Normal",
-    Flag = "Bring Mode",
-    Save = true,
-	Options = BringList,
-	Callback = function(Value)
-		_G.BringMode = Value
-	end    
-})
-
-MainTab:AddToggle({
-	Name = "Bring Mobs",
-	Default = true,
-    Flag = "Bring Mobs",
-    Save = true,
-	Callback = function(Value)
-		_G.BringMonster = Value
-	end    
-})
-
 --Fast Attack
 
 local Section = SettingsTab:AddSection({
@@ -910,5 +913,19 @@ spawn(function()
         end
     end
 end)
+
+--Bypass Teleport
+
+local Section = SettingsTab:AddSection({
+	Name = "Bypass"
+})
+
+SettingsTab:AddToggle({
+	Name = "Bypass Teleport",
+	Default = true,
+	Callback = function(Value)
+		BypassTP = Value
+	end    
+})
 
 BendruHub:Init()
