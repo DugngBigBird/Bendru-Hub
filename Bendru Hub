@@ -1168,6 +1168,23 @@ spawn(function()
     end
 end)
 
+function BP(P)
+	pcall(function()
+        repeat task.wait()
+		    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
+		    task.wait()
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
+            task.wait()
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
+            task.wait()
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
+        until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000
+    end)
+end
+
+local PosCake = CFrame.new(-2091.911865234375, 70.00884246826172, -12142.8359375)
+
 --Bypass Teleport
 
 local Section = SettingsTab:AddSection({
